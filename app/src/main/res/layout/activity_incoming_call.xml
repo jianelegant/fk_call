@@ -36,4 +36,13 @@
         android:textColor="@color/samsungText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/id_left_arrow"
+        android:src="@drawable/arrow_left"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="50dp"
+        android:layout_width="18dp"
+        android:layout_height="18dp" />
 </RelativeLayout>
