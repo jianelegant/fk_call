@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 
 import java.lang.ref.WeakReference;
@@ -16,6 +17,7 @@ public class IncomingCallActivity extends AppCompatActivity {
     private static final int HANDLER_ANIM_DUR = 1000;
     private Handler mHandler;
 
+    View mAnswerCall;
     ImageView mLeftArrow;
     ObjectAnimator mLeftAnima;
 
@@ -34,6 +36,13 @@ public class IncomingCallActivity extends AppCompatActivity {
     }
 
     private void initViews() {
+        mAnswerCall = findViewById(R.id.answer_call);
+        mAnswerCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         mLeftArrow = findViewById(R.id.id_left_arrow);
         startAnim();
     }

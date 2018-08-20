@@ -1,48 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/samsungCallColorPrimary"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/samsungCallColorPrimary"
     tools:context=".IncomingCallActivity">
 
     <TextView
         android:id="@+id/id_incoming_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
         android:text="@string/incomming_call"
         android:textColor="@color/samsungText"
-        android:layout_marginTop="60dp"
-        android:layout_marginLeft="10dp"
-        android:textSize="14dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:textSize="14dp" />
 
     <TextView
         android:id="@+id/id_name"
-        android:text="@string/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="200dp"
-        android:textSize="30dp"
+        android:text="@string/name"
         android:textColor="@color/samsungText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:textSize="30dp" />
 
     <TextView
         android:id="@+id/id_phone"
-        android:text="@string/phone"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/id_name"
-        android:layout_marginTop="20dp"
-        android:textSize="14dp"
-        android:textColor="@color/samsungText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/phone"
+        android:textColor="@color/samsungText"
+        android:textSize="14dp" />
 
-    <android.support.v7.widget.AppCompatImageView
-        android:id="@+id/id_left_arrow"
-        android:src="@drawable/arrow_left"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="100dp"
-        android:layout_marginBottom="50dp"
-        android:layout_width="18dp"
-        android:layout_height="18dp" />
+        android:layout_marginBottom="100dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:id="@+id/answer_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="30dp"
+                app:mrl_rippleColor="#fafafa"
+                app:mrl_rippleOverlay="true">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/answer_call" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/id_left_arrow"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginLeft="-10dp"
+                android:layout_toRightOf="@id/answer_call"
+                android:src="@drawable/arrow_left" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="40dp"
+            android:layout_toRightOf="@id/left"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/reject_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/reject_call" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/id_right_arrow"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toLeftOf="@id/reject_call"
+                android:src="@drawable/arrow_left" />
+        </RelativeLayout>
+    </LinearLayout>
 </RelativeLayout>
